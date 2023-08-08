@@ -1,6 +1,8 @@
-export const filterUsers = (text) => (dispatch) => {
+import { DispatchType } from "../type";
+
+export const filterUsers = (text: string) => (dispatch: DispatchType) => {
   dispatch({
-    type: "REMOVE_USER",
+    type: "FILTER_USERS",
     payload: text
   });
 };

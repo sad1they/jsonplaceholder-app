@@ -1,8 +1,13 @@
+import { QueryAction, QueryState } from "../type";
+
 const initialState = {
   query: ""
 };
 
-export default function (state = initialState, action) {
+export default function (
+  state: QueryState = initialState,
+  action: QueryAction
+) {
   switch (action.type) {
     case "FILTER_USERS":
       return {

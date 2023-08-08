@@ -1,4 +1,6 @@
-export const fetchUsers = () => (dispatch) => {
+import { DispatchType, IUser } from "../type";
+
+export const fetchUsers = () => (dispatch: DispatchType) => {
   fetch("https://jsonplaceholder.typicode.com/users")
     .then((res) => res.json())
     .then((users) =>
@@ -9,7 +11,7 @@ export const fetchUsers = () => (dispatch) => {
     );
 };
 
-export const removeUser = (newList) => (dispatch) => {
+export const removeUser = (newList: IUser[]) => (dispatch: DispatchType) => {
   dispatch({
     type: "REMOVE_USER",
     payload: newList

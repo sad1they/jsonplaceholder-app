@@ -1,8 +1,13 @@
+import { UserState, UsersAction } from "../type";
+
 const initialState = {
   items: []
 };
 
-export default function (state = initialState, action) {
+export default function (
+  state: UserState = initialState, 
+  action: UsersAction
+  ) {
   switch (action.type) {
     case "GET_USERS":
       return {

@@ -1,8 +1,14 @@
-import { combineReducers } from "redux";
+import { CombinedState, Reducer, combineReducers } from "redux";
 import usersReducer from "./usersReducer";
-import searchReducer from "./searchReducer";
+import filterReducer from "./filterReducer";
+import { QueryAction, QueryState, UsersAction } from "../type";
 
-export default combineReducers({
+const rootReducer:Reducer<
+  CombinedState<{users: never; query: QueryState;}>, 
+  UsersAction | QueryAction
+> = combineReducers({
   users: usersReducer,
-  query: searchReducer
+  query: filterReducer
 });
+
+export default rootReducer;
