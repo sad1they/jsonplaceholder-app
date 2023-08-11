@@ -60,24 +60,27 @@ export default function UsersList() {
             return (
               <li key={user.id} className={styles.list__item} onClick={() => handleModal(user)}>
                 <div className={styles.list__layout}>
-                  <Highlight
-                    searchWords={[query]}
-                    autoEscape={true}
-                    textToHighlight={user.name}
-                  />
-                  <div>Name: {user.name}</div>
-                  <Highlight
-                    searchWords={[query]}
-                    autoEscape={true}
-                    textToHighlight={user.username}
-                  />
-                  <div>Username: {user.username}</div>
+                  <div>Name: 
                     <Highlight
-                    searchWords={[query]}
-                    autoEscape={true}
-                    textToHighlight={user.email}
-                  />
-                  <div>Email: {user.email}</div>
+                      searchWords={[query]}
+                      autoEscape={true}
+                      textToHighlight={user.name}
+                    />
+                  </div>
+                  <div>Username: 
+                    <Highlight
+                      searchWords={[query]}
+                      autoEscape={true}
+                      textToHighlight={user.username}
+                    />
+                  </div>
+                  <div>Email: 
+                    <Highlight
+                      searchWords={[query]}
+                      autoEscape={true}
+                      textToHighlight={user.email}
+                    />
+                  </div>
                 </div>
                 <div className={styles.list__layout}>
                   <button onClick={(e) => handleRemove(e, user.id)}>Remove</button>
